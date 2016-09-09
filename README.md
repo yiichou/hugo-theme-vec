@@ -22,7 +22,7 @@ You could add `params` into your site's `config.toml` file:
 ```
 [params]
   Keywords = "key, 关键字, キーワード"
-  Description = "There is some words to describe your site"
+  Description = "There are some words to describe your site"
   
   Avater = "//chou.oss-cn-hangzhou.aliyuncs.com/yii.im/avatar.jpg"
   SelfIntro = "Just a worm, seek for true, live in shadow, no more..." 

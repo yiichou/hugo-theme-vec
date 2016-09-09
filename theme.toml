@@ -1,8 +1,8 @@
 name = "Vec"
 license = "MIT"
-licenselink = "https://github.com/IvanChou/yii.im/tree/hugo"
+licenselink = "https://github.com/IvanChou/hugo-theme-vec/blob/master/LICENSE.md"
 description = "Vec -- a minimal theme for Hugo."
-homepage = "https://github.com/IvanChou/yii.im/tree/hugo"
+homepage = "https://github.com/IvanChou/hugo-theme-vec"
 tags = ["minimal", "clean", "neat", "black white", "blog"]
 features = ["blog"]
 min_version = 0.10
