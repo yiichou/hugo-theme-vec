@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> {{ .Title }} &middot; {{ .Site.Title }} </title>
+  
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+  {{ partial "header.html" . }}
+  <div class="content">
+    <section class="post">
+      <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+    </section>
+  </div>
+  {{ partial "footer.html" . }}
+  
+  {{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  <title> {{ .Title }} &middot; {{ .Site.Title }} </title>
+  
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+  
+  {{ partial "header.html" . }}
+  <div class="content">
+    <section class="posts">
+      {{ $paginator := .Paginate (.Data.Pages.GroupByDate "2006-01") 20 }} 
+      {{ range $paginator.PageGroups }}
+      <div class="posts-archive">
+        {{ $month := (print .Key "-01") }}
+        <time class="posts-archive-month" datetime="{{ $month }}">{{ dateFormat "Jan 2006" $month }}</time>
+        <ol class="posts-list">
+        {{ range .Pages }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+        </ol>
+      </div>
+      {{ end }}
+    </section>
+    {{ partial "pagination.html" . }}
+  </div>
+  
+  {{ partial "footer.html" . }}
+  
+  {{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+
+</body>
+
+</html>

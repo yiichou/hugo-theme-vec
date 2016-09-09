@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> {{ .Title }} &middot; {{ .Site.Title }} </title>
+  
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+  {{ partial "header.html" . }}
+  <div class="content">
+    {{ if .Params.Toc }}{{ .TableOfContents }}{{ end }}
+    
+    <section class="post">
+      <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <span class="post-date">{{ .Date.Format "Jan 2, 2006 " }}</span>
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+    </section>
+    
+    <section class="pagination clearfix">
+      {{ with .PrevInSection }}
+      <a class="btn previous " href="{{.Permalink}}"> {{ .Title }} </a> 
+      {{ end }} 
+      {{ with .NextInSection }}
+      <a class="btn next " href="{{.Permalink}}"> {{ .Title }} </a> 
+      {{ end }}
+    </section>
+    
+    {{ if .Params.comments }}{{ partial "disqus.html" . }}{{ end }}
+  </div>
+  
+  {{ partial "footer.html" . }}
+  
+  <script src="{{ .Site.BaseURL }}/js/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  {{ with .Site.Params.AnalyticsID }}{{ partial "analytics.html" . }}{{ end }}
+</body>
+
+</html>

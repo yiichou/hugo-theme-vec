@@ -1,0 +1,12 @@
+name = "Vec"
+license = "MIT"
+licenselink = "https://github.com/IvanChou/yii.im/tree/hugo"
+description = "Vec -- a minimal theme for Hugo."
+homepage = "https://github.com/IvanChou/yii.im/tree/hugo"
+tags = ["minimal", "clean", "neat", "black white", "blog"]
+features = ["blog"]
+min_version = 0.10
+
+[author]
+    name = "Ivan Chou"
+    homepage = "https://yii.im"
