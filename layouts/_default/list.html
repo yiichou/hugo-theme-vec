@@ -12,7 +12,7 @@
   {{ partial "header.html" . }}
   <div class="content">
     <section class="posts">
-      {{ $paginator := .Paginate (.Data.Pages.GroupByDate "2006-01") 20 }} 
+      {{ $paginator := .Paginate (.Data.Pages.GroupByDate "2006-01") }} 
       {{ range $paginator.PageGroups }}
       <div class="posts-archive">
         {{ $month := (print .Key "-01") }}

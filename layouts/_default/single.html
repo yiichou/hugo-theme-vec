@@ -10,7 +10,7 @@
 <body>
   {{ partial "header.html" . }}
   <div class="content">
-    {{ if .Params.Toc }}{{ .TableOfContents }}{{ end }}
+    {{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
     
     <section class="post">
       <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
@@ -34,7 +34,7 @@
   
   {{ partial "footer.html" . }}
   
-  <script src="{{ .Site.BaseURL }}/js/highlight.min.js"></script>
+  <script src="{{ "js/highlight.min.js" | absURL }}"></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>

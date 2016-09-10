@@ -35,7 +35,7 @@ You could add `params` into your site's `config.toml` file:
   LinkedInID = "Your LinkedIn ID"
   GoogleplusID = "Your Googleplus ID"
   AnalyticsID = "Your Google Analytics tracking code"
-  DisqusID = "Your Disqus shortname"
+  DisqusShortname = "Your Disqus shortname"
 ```
 
 If you use `config.yaml`, plz reformat them to yaml.

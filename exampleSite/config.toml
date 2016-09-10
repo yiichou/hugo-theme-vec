@@ -1,0 +1,34 @@
+baseurl = "http://replace-this-with-your-hugo-site.com"
+title = "yii.im"
+theme = "vec"
+languageCode = "en-us"
+paginate = 10
+
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "post"
+    weight = 0
+    url = "/post"
+  [[menu.main]]
+    name = "contact"
+    weight = 1
+    url = "/contact"
+  [[menu.main]]
+    name = "faq"
+    weight = 2
+    url = "/faq"
+    
+[params]
+  Keywords = "key, 关键字, キーワード"
+  Description = "There are some words to describe your site"
+  Avater = "//img.ichou.cn/yii.im/avatar.jpg"
+  SelfIntro = "Just a worm, seek for true, live in shadow, no more..." 
+  
+  GithubID = "Your Github ID"
+  TwitterID = "Your Twitter ID"
+  FacebookID = "Your Facebook ID"
+  LinkedInID = "Your LinkedIn ID"
+  GoogleplusID = "Your Googleplus ID"
+  AnalyticsID = "UA-57408564-1"
+  DisqusShortname = "yiiim"
