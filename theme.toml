@@ -5,7 +5,7 @@ description = "Vec -- a minimal theme for Hugo."
 homepage = "https://github.com/IvanChou/hugo-theme-vec"
 tags = ["minimal", "clean", "neat", "black white", "blog"]
 features = ["blog"]
-min_version = 0.10
+min_version = 0.15
 
 [author]
     name = "Ivan Chou"

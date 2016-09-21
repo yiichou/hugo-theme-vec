@@ -1,11 +1,11 @@
 @import url(//fonts.googleapis.com/css?family=Droid+Sans+Mono|Russo+One|Source+Sans+Pro:400,700);
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+@import url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css);
 
 @import "github-gist.scss";
 
-$font-body: 'Source Sans Pro', 'PingFang SC', 'Microsoft YaHei', Arial, Serif;
-$font-title: 'Russo One', 'PingFang SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-$font-code: 'Droid Sans Mono', Menlo, Monaco, monospace;
+$font-body: 'Source Sans Pro', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-title: 'Russo One', 'Arial Black', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+$font-code: 'Droid Sans Mono', Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
 html {
   height:100%;
@@ -140,7 +140,7 @@ footer {
 .user-profile {
   width: 100%;
   padding: 4rem 1rem 8rem;
-  font-family: '','Monaco',monospace;
+  font-family: $font-title;
   color: #888;
   text-align: center;
   box-sizing: border-box;
@@ -183,7 +183,7 @@ footer {
     
     time {
       display: block;
-      width: 8rem;
+      width: 10rem;
       float: left;
       font-family: $font-title;
       font-size: 1.75rem;
