@@ -15,7 +15,10 @@
   
   <section class="user-profile">
     <figure class="user-avatar">
-      <img alt="avater" src="{{ .Site.Params.Avater }}">
+        {{ with .Site.Params.Avater }}
+        <img alt="avater" src="{{.}}">
+        {{ end }}
+
       <figcaption class="user-socials">
         {{ with .Site.Params.TwitterID }}
         <a href="https://twitter.com/{{.}}" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
