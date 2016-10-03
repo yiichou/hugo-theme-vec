@@ -1,4 +1,4 @@
-{{ if .Site.Params.DisqusShortname }}
+{{ if and .Site.DisqusShortname .Params.comments }}
 <section id="disqus_thread" class='disqus'></section>
 <script>
   var disqus_config = function () {
@@ -7,7 +7,7 @@
   };
   (function() {
     var d = document, s = d.createElement('script');
-    s.src = '//{{ .Site.Params.DisqusShortname }}.disqus.com/embed.js';
+    s.src = '//{{ .Site.DisqusShortname }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
   })();

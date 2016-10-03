@@ -19,14 +19,27 @@ git clone https://github.com/IvanChou/hugo-theme-vec vec
 See the [official docs](http://gohugo.io/themes/installing) for more information.
 
 ## Configuration
-You could add `params` into your site's `config.toml` file:
+
+You should config your site's `config.toml` file like:
 
 ```
+baseurl = "http://replace-this-with-your-hugo-site.com"
+title = "Site.title"
+theme = "vec"
+languageCode = "en-us"
+paginate = 15
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "Your Disqus shortname"
+
+# Enable analytics by entering your Google Analytics tracking ID
+googleAnalytics = "Your Google Analytics tracking code"
+
 [params]
   Keywords = "key, 关键字, キーワード"
   Description = "There are some words to describe your site"
   
-  Avater = "//chou.oss-cn-hangzhou.aliyuncs.com/yii.im/avatar.jpg"
+  Avater = "img/avatar.jpg"
   SelfIntro = "Just a worm, seek for true, live in shadow, no more..." 
   
   GithubID = "Your Github ID"
@@ -34,8 +47,6 @@ You could add `params` into your site's `config.toml` file:
   FacebookID = "Your Facebook ID"
   LinkedInID = "Your LinkedIn ID"
   GoogleplusID = "Your Googleplus ID"
-  AnalyticsID = "Your Google Analytics tracking code"
-  DisqusShortname = "Your Disqus shortname"
 ```
 
 If you use `config.yaml`, plz reformat them to yaml.

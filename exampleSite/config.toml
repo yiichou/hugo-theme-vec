@@ -3,6 +3,8 @@ title = "yii.im"
 theme = "vec"
 languageCode = "en-us"
 paginate = 10
+disqusShortname = "yiiim"
+googleAnalytics = "UA-57408564-1"
 
 [menu]
   # Shown in the side menu.
@@ -22,7 +24,7 @@ paginate = 10
 [params]
   Keywords = "key, 关键字, キーワード"
   Description = "There are some words to describe your site"
-  Avater = "//img.ichou.cn/yii.im/avatar.jpg"
+  Avater = "img/avatar.jpg"
   SelfIntro = "Just a worm, seek for true, live in shadow, no more..." 
   
   GithubID = "Your Github ID"
@@ -30,5 +32,3 @@ paginate = 10
   FacebookID = "Your Facebook ID"
   LinkedInID = "Your LinkedIn ID"
   GoogleplusID = "Your Googleplus ID"
-  AnalyticsID = "UA-57408564-1"
-  DisqusShortname = "yiiim"
