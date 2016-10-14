@@ -1,4 +1,4 @@
-{{ if .Site.Params.SoundCloudClientId }}
+{{ if .Site.Params.SoundCloudClientID }}
 
 <div id="soundcloud-cards">
 </div>
@@ -15,7 +15,7 @@ var currentTrack = undefined;
 var sTracks = [];
 
 SC.initialize({
-    client_id:"e8d7520deac9c6d3f25a01fd60e843d8"
+    client_id:"{{ .Site.Params.SoundCloudClientID }}"
 });
 
 soundcloud = {
@@ -26,8 +26,8 @@ soundcloud = {
     tracks = [];
 
     var req = $.ajax({
-      url: "https://api.soundcloud.com/users/4246445/favorites",
-      data: { format:"json", client_id:"e8d7520deac9c6d3f25a01fd60e843d8" }
+      url: "{{ .Site.Params.SoundCloudSoundsUrl }}",
+      data: { format:"json", client_id:"{{ .Site.Params.SoundCloudClientID }}" }
     });
 
     req.done( function( tracks ) {
