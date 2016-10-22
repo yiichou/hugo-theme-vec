@@ -1,0 +1,119 @@
+{{ if .Site.Params.SoundCloudClientID }}
+
+<div id="soundcloud-cards">
+</div>
+
+<script type="text/javascript" src="//connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+<script
+  src="http://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+<script>
+var sPlayer = undefined;
+var currentTrack = undefined;
+var sTracks = [];
+
+SC.initialize({
+    client_id:"{{ .Site.Params.SoundCloudClientID }}"
+});
+
+soundcloud = {
+  isPlaying: false,
+
+  getTracks: function() {
+    // fetch the tracks from soundcloud
+    tracks = [];
+
+    var req = $.ajax({
+      url: "{{ .Site.Params.SoundCloudSoundsUrl }}",
+      data: { format:"json", client_id:"{{ .Site.Params.SoundCloudClientID }}" }
+    });
+
+    req.done( function( tracks ) {
+      //SC.get("/users/4246445/favorites").then(function(tracks) {
+      div = document.getElementById("soundcloud-cards");
+      div.innerHTML = ""; // clear the div
+      var _tracks = [];
+
+      for(var i = 0; i < tracks.length; i++) {
+        if(!tracks[i].artwork_url)
+          tracks[i].artwork_url = "https://a-v2.sndcdn.com/assets/images/default/cloudx200-38b02b00.png";
+
+        if(tracks[i].streamable)
+          _tracks.push(tracks[i]);
+      }
+
+      sTracks = _tracks;
+
+      // Create the elements that will populate the div
+      $fillHtml = ""
+      for(var i = 0; i < sTracks.length; i++) {
+        track = sTracks[i];
+        $el = "<figure class=\"user-avatar uk-overlay uk-overlay-hover uk-thumbnail\"><img alt=\"sc\" src=" + track.artwork_url + "><figcaption class=\"uk-overlay-panel uk-overlay-fade uk-overlay-background\">" + track.title + "<i id=\"playButton" + i + "\" class=\"uk-icon-play uk-icon-medium\" style=\"position:absolute; left:45%;top:45%;\"></i></figcaption><a class=\"uk-position-cover\" href=\"#\" onclick=\"soundcloud.playTrack(" + i + ")\"></a></figure>"
+        $fillHtml += $el;
+      }
+
+      div.innerHTML = "<h2 style=\"font-weight: 600; text-align: left; margin-left: 2.5rem;\">Songs I'm Listening To</h2>";
+      div.innerHTML += $fillHtml;
+    });
+  },
+
+  setPlayState: function(trackNumber, iconType) {
+    var el = document.getElementById("playButton" + trackNumber);
+    el.setAttribute("class", "uk-icon-" + iconType + " uk-icon-medium");
+  },
+
+  setSpinPlayState: function(trackNumber) {
+    var el = document.getElementById("playButton" + trackNumber);
+    el.setAttribute("class", el.getAttribute("class") + " uk-icon-spin");
+  },
+
+  playTrack: function(trackNumber) {
+    track = sTracks[trackNumber];
+    track.number = trackNumber;
+
+    if(sPlayer && sPlayer.track.id == track.id) {
+      if(this.isPlaying) {
+        sPlayer.pause();
+        this.isPlaying = false;
+        this.setPlayState(trackNumber, "play");
+      }
+      else {
+        sPlayer.play();
+        this.isPlaying = true;
+        this.setPlayState(trackNumber, "pause");
+      }
+
+      return;
+    }
+
+    var thisRef = this;
+    this.setPlayState(trackNumber, "spinner");
+    this.setSpinPlayState(trackNumber);
+    
+    SC.stream("/tracks/" + track.id).then(function(sound) {
+      if(sPlayer) 
+        sPlayer.pause();
+
+      sPlayer = sound;
+      sPlayer.track = track;
+
+      sPlayer.on("buffering_end", function() {
+        thisRef.setPlayState(trackNumber, "pause");
+      });
+
+      sPlayer.play();
+      thisRef.isPlaying = true;
+
+      currentTrack = track;
+    });
+  }
+};
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+  soundcloud.getTracks();
+});
+
+</script>
+{{ end }}
