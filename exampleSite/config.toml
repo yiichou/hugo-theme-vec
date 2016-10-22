@@ -1,4 +1,4 @@
-baseurl = "http://replace-this-with-your-hugo-site.com"
+baseurl = "https://www.example.com"
 title = "yii.im"
 theme = "vec"
 languageCode = "en-us"

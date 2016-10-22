@@ -23,7 +23,7 @@ See the [official docs](http://gohugo.io/themes/installing) for more information
 You should config your site's `config.toml` file like:
 
 ```
-baseurl = "http://replace-this-with-your-hugo-site.com"
+baseurl = "https://www.example.com"
 title = "Site.title"
 theme = "vec"
 languageCode = "en-us"
