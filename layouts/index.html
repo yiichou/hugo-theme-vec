@@ -15,10 +15,7 @@
   
   <section class="user-profile">
     <figure class="user-avatar">
-        {{ with .Site.Params.Avater }}
-        <img alt="avater" src="{{.}}">
-        {{ end }}
-
+      <img alt="avater" src="{{ .Site.Params.Avater }}">
       <figcaption class="user-socials">
         {{ with .Site.Params.TwitterID }}
         <a href="https://twitter.com/{{.}}" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
@@ -38,9 +35,6 @@
         
       </figcaption>
     </figure>
-
-  {{ partial "soundcloud.html" . }}
-
     <p class="user-motivation">{{ .Site.Params.SelfIntro }}</p>
   </section>
   
