@@ -1,0 +1,13 @@
+{{ if .Site.Params.Email }}
+<hr />
+<div id="formspree" class='formspree'>
+  <h2>CONTACT ME</h2>
+  <form action="https://formspree.io/{{ .Site.Params.Email }}" method="POST">
+    <input type="text" name="_gotcha" style="display:none" />
+    <input type="hidden" name="subject" value="comment to: {{ .Title }}">
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" placeholder="Your message" rows=5 required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+{{ end }}

@@ -1,6 +1,7 @@
 +++
 title = "Contact"
 id = "contact"
+formspree = true
 +++
 
 # We are here to help you

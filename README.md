@@ -62,6 +62,11 @@ If you need show table of contents per-post, adding `toc: true` (YAML) or `toc =
 
 Please notice that TOC will be hidden when browser width is less than 920px.
 
+### Enable Formspree to your page
+
+If you need a form which enables guests to contact you by email, Formspree maybe a good choice.
+just adding `formspree: true` (YAML) or `formspree = true` (TOML) in the front matter of your page.
+
 ## Build your site
 
 Add `theme = "vec"` to your `config.toml`, then

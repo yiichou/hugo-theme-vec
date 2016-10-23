@@ -29,7 +29,7 @@
       {{ end }}
     </section>
     
-    {{ partial "disqus.html" . }}
+    {{ if .Params.comments }}{{ partial "disqus.html" . }}{{ end }}
   </div>
   
   {{ partial "footer.html" . }}

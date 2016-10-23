@@ -15,7 +15,12 @@
       <div class="post-content">
         {{ .Content }}
       </div>
+      
+      {{ if .Params.formspree }}{{ partial "formspree.html" . }}{{ end }}
+      
     </section>
+    
+    {{ if .Params.comments }}{{ partial "disqus.html" . }}{{ end }}
   </div>
   {{ partial "footer.html" . }}
   
