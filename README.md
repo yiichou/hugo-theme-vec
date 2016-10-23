@@ -41,6 +41,7 @@ googleAnalytics = "Your Google Analytics tracking code"
   
   Avater = "img/avatar.jpg"
   SelfIntro = "Just a worm, seek for true, live in shadow, no more..." 
+  Email = "you@example.com"
   
   GithubID = "Your Github ID"
   TwitterID = "Your Twitter ID"
@@ -64,8 +65,9 @@ Please notice that TOC will be hidden when browser width is less than 920px.
 
 ### Enable Formspree to your page
 
-If you need a form which enables guests to contact you by email, Formspree maybe a good choice.
-just adding `formspree: true` (YAML) or `formspree = true` (TOML) in the front matter of your page.
+If you need a form which allows guests to contact you by email, Formspree maybe a good choice.
+
+Firstly, make sure you have already set a Email in the config.toml. And then add `formspree: true` (YAML) or `formspree = true` (TOML) in the front matter of your page.
 
 ## Build your site
 
