@@ -88,8 +88,11 @@ hugo server -t vec
 ```
 
 
+## Design By
+
+Cedric Fung(@vecio)
+
 ## License
 
 Open sourced under [MIT license](https://github.com/IvanChou/hugo-theme-vec/blob/master/LICENSE.md).
-
 

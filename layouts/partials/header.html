@@ -8,7 +8,7 @@
       </li>
       {{ range .Site.Menus.main }}
       {{ $name := lower .Name }}
-      <li class="pull-left {{ if eq $name $title }}current{{ else if eq $section $name }}current{{ end }}">
+      <li class="pull-left {{ if eq $name $title }}current{{ else if eq $section $name }}current{{ else if eq $title (pluralize $name) }}current{{ end }}">
         <a href="{{ .URL }}">~/{{ lower .Name }}</a>
       </li>
       {{end}}
