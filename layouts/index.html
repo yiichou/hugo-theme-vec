@@ -2,20 +2,20 @@
 <html lang="{{ .Site.LanguageCode }}">
 <head>
   <title> {{ .Site.Title }} </title>
-  
+
   {{ with .Site.Params.Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
   {{ with .Site.Params.Description }}<meta name="description" content="{{.}}">{{ end }}
-  
+
   {{ partial "head.html" . }}
-    
+
 </head>
 
 <body>
   {{ partial "header.html" . }}
-  
+
   <section class="user-profile">
     <figure class="user-avatar">
-      <img alt="avater" src="{{ .Site.Params.Avater }}">
+      <img alt="avatar" src="{{ .Site.Params.Avatar }}">
       <figcaption class="user-socials">
         {{ with .Site.Params.TwitterID }}
         <a href="https://twitter.com/{{.}}" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
@@ -32,12 +32,12 @@
         {{ with .Site.Params.LinkedInID }}
         <a href="http://linkedin.com/in/{{.}}" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
         {{ end }}
-        
+
       </figcaption>
     </figure>
     <p class="user-motivation">{{ .Site.Params.SelfIntro }}</p>
   </section>
-  
+
   {{ partial "footer.html" . }}
   {{ partial "analytics.html" . }}
 
