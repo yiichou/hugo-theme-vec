@@ -10,7 +10,7 @@
     
 </head>
 
-<body>
+<body class="index">
   {{ partial "header.html" . }}
   
   <section class="user-profile">
@@ -18,19 +18,19 @@
       <img alt="avater" src="{{ .Site.Params.Avater }}">
       <figcaption class="user-socials">
         {{ with .Site.Params.TwitterID }}
-        <a href="https://twitter.com/{{.}}" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/{{.}}" title="Twitter"><i class="fab fa-twitter-square" aria-hidden="true"></i></a>
         {{ end }}
         {{ with .Site.Params.GoogleplusID }}
-        <a href="https://plus.google.com/{{.}}/about" title="Google+"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+        <a href="https://plus.google.com/{{.}}/about" title="Google+"><i class="fab fa-google-plus-square" aria-hidden="true"></i></a>
         {{ end }}
         {{ with .Site.Params.FacebookID }}
-        <a href="https://facebook.com/{{.}}" title="Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        <a href="https://facebook.com/{{.}}" title="Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
         {{ end }}
         {{ with .Site.Params.GithubID }}
-        <a href="https://github.com/{{.}}" title="GitHub"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+        <a href="https://github.com/{{.}}" title="GitHub"><i class="fab fa-github-square" aria-hidden="true"></i></a>
         {{ end }}
         {{ with .Site.Params.LinkedInID }}
-        <a href="http://linkedin.com/in/{{.}}" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="http://linkedin.com/in/{{.}}" title="LinkedIn"><i class="fab fa-linkedin-square" aria-hidden="true"></i></a>
         {{ end }}
         
       </figcaption>

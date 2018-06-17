@@ -1,5 +1,5 @@
 @import url(//fonts.googleapis.com/css?family=Droid+Sans+Mono|Russo+One|Source+Sans+Pro:400,700);
-@import url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css);
+@import url(//use.fontawesome.com/releases/v5.0.7/css/all.css);
 
 @import "github-gist.scss";
 
@@ -66,7 +66,7 @@ img,video {
 
 @mixin awesome-fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal 900 14px/1 "Font Awesome 5 Free";
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -137,9 +137,14 @@ footer {
 
 /* ============== Index ============== */
 
+.index {
+  display: flex;
+  align-items: center;
+}
+
 .user-profile {
   width: 100%;
-  padding: 4rem 1rem 8rem;
+  padding: 4rem 1rem 12rem;
   font-family: $font-title;
   color: #888;
   text-align: center;
@@ -197,10 +202,23 @@ footer {
     
     ol {
       margin-left: 12rem;
+      list-style-type: none;
+      counter-reset: li;
       
       li {
         margin-bottom: .5rem;
-        list-style: decimal;
+        list-style: none;
+        counter-increment: li;
+
+        &::before {
+          content: counter(li) "."; 
+          color: #005580;
+          display: inline-block; 
+          width: 1em; 
+          margin-left: -1.5em;
+          margin-right: 0.5em; 
+          text-align: right; 
+        }
       }
     }
   }
@@ -208,10 +226,28 @@ footer {
 
 /* ============== Page ============== */
 
+.content {
+  &.wide {
+    max-width: 52rem;
+  }
+  
+  &.toc {
+    max-width: 50rem;
+  }
+}
+
 .post {
   color: #444;
   line-height: 1.8;
   width: 100%;
+
+  h1,h2,h3,h4,h5,h6 {
+    padding: 2.5rem 0 1rem;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+  }
   
   hr {
     height: 0.25rem;
@@ -276,7 +312,7 @@ footer {
   border-radius: .25rem;
   padding: 1rem;
   background-color: #f7f7f7;
-  margin: 5rem 0 0 35rem;
+  margin: 5rem 0 0 45rem;
   position: absolute;
   font-size: .875rem;
   
@@ -284,20 +320,30 @@ footer {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  
-  a {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 14rem;
-    text-overflow: ellipsis;
-    
-    &:before {
-      content: '•';
-      padding-right: .25rem;
+
+    li {
+      a {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 14rem;
+        text-overflow: ellipsis;
+        
+        &:before {
+          content: '├';
+          padding-right: .25rem;
+        }
+      }
+
+      &:last-of-type > a {
+        &:before {
+          content: '└';
+          padding-right: .25rem;
+        }
+      } 
     }
   }
+
   
   a + ul {
     padding-left: 1.5rem;
@@ -396,8 +442,49 @@ footer {
   
 }
 
-
 /* ============== media ============== */
+
+@media (max-width: 1200px) {
+  .content.toc {
+    max-width: 40rem;
+  }
+  
+  #TableOfContents {
+    margin: 5rem 0 0 35rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .posts {
+    margin-left: 0rem;
+  }
+  
+  #TableOfContents {
+    display: none;
+    
+    & ~ section {
+      margin-left: 0rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .posts {
+    margin-left: 0rem;
+  
+    .posts-archive {
+      time {
+        float: none;
+        text-align: left;
+        margin-bottom: 1rem;
+      }
+    
+      ol {
+        margin-left: 0;
+      }
+    }
+  }
+}
 
 @media (max-width: 480px) {
   .content {
@@ -425,37 +512,3 @@ footer {
     }
   }
 }
-
-@media (max-width: 920px) {
-  .posts {
-    margin-left: 0rem;
-  }
-  
-  #TableOfContents {
-    display: none;
-    
-    & ~ section {
-      margin-left: 0rem;
-    }
-  }
-
-}
-
-@media (max-width: 700px) {
-  .posts {
-    margin-left: 0rem;
-  
-    .posts-archive {
-      time {
-        float: none;
-        text-align: left;
-        margin-bottom: 1rem;
-      }
-    
-      ol {
-        margin-left: 0;
-      }
-    }
-  }
-}
-

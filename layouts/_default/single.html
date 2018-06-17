@@ -9,7 +9,7 @@
 
 <body>
   {{ partial "header.html" . }}
-  <div class="content">
+  <div class="content {{ if .Params.toc }}toc{{ else }}wide{{ end }}">
     {{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
     
     <section class="post">
