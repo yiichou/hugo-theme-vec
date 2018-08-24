@@ -55,7 +55,7 @@ googleAnalytics = "Your Google Analytics tracking code"
   Keywords = "key, 关键字, キーワード"
   Description = "There are some words to describe your site"
   
-  Avater = "img/avatar.jpg"
+  Avatar = "img/avatar.jpg"
   SelfIntro = "Just a worm, seek for true, live in shadow, no more..." 
   Email = "you@example.com"
   
