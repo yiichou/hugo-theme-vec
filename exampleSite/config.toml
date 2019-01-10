@@ -3,8 +3,8 @@ title = "yii.im"
 theme = "vec"
 languageCode = "en-us"
 paginate = 10
-disqusShortname = "yiiim"
-googleAnalytics = "UA-57408564-1"
+disqusShortname = ""
+googleAnalytics = ""
 
 [menu]
   # Shown in the side menu.
